@@ -4,26 +4,103 @@
   "book_title": "No-code AI for Young Cambodian Learners",
   "author": "Rina Buoy, PhD",
   "about": "A hands-on guide for secondary and high school learners (Grades 7-12) to build real AI without writing code, using Google Teachable Machine. It covers image, sound and pose classifiers and the ideas behind them: learning from examples, collecting varied data, training and tuning, testing with new data, and using AI responsibly.\n\nThis book was prepared with the assistance of Claude Code (an AI tool from Anthropic). The author provides the content and reviews and revises all of the outputs.\n\nPlan: a complete reviewed edition by the end of 2026, with a free soft copy (PDF) and a low-cost hard copy.",
-  "book": {
-    "title": "Book so far (cover, Chapters 1-3, appendices A-E, about the author)",
-    "file": "book/public/main.pdf"
-  },
-  "chapters": [
-    {"n": 1, "title": "What Is AI, Really?", "file": "book/public/chapter-1.pdf"},
-    {"n": 2, "title": "Image Classification", "file": "book/public/chapter-2.pdf"},
-    {"n": 3, "title": "Image Classification Project Lab: Train, Tune, Save and Share", "file": "book/public/chapter-3.pdf"}
-  ],
   "coming_soon": [
-    {"n": 4, "title": "Audio and Sound Classification"},
-    {"n": 5, "title": "Audio Classification in Practice: Use Cases, Data and Evaluation"},
-    {"n": 6, "title": "Pose Prediction: Build a Sleepy-Head Detector"},
-    {"n": 7, "title": "Teaching AI to Read Digits in Khmer and English"},
-    {"n": 8, "title": "Image Data Augmentation: More Training Pictures from the Photos You Have"},
-    {"n": 9, "title": "Audio Data Augmentation: More Training Sounds from the Clips You Have"}
+    {
+      "n": 4,
+      "title": "Audio and Sound Classification"
+    },
+    {
+      "n": 5,
+      "title": "Audio Classification in Practice: Use Cases, Data and Evaluation"
+    },
+    {
+      "n": 6,
+      "title": "Pose Prediction: Build a Sleepy-Head Detector"
+    },
+    {
+      "n": 7,
+      "title": "Teaching AI to Read Digits in Khmer and English"
+    },
+    {
+      "n": 8,
+      "title": "Image Data Augmentation: More Training Pictures from the Photos You Have"
+    },
+    {
+      "n": 9,
+      "title": "Audio Data Augmentation: More Training Sounds from the Clips You Have"
+    }
   ],
   "support": [
-    {"amount": 2, "file": "donate/aba-qr-2usd.png"},
-    {"amount": 5, "file": "donate/aba-qr-5usd.png"},
-    {"amount": 10, "file": "donate/aba-qr-10usd.png"}
-  ]
+    {
+      "amount": 2,
+      "file": "donate/aba-qr-2usd.png"
+    },
+    {
+      "amount": 5,
+      "file": "donate/aba-qr-5usd.png"
+    },
+    {
+      "amount": 10,
+      "file": "donate/aba-qr-10usd.png"
+    }
+  ],
+  "docs": [
+    {
+      "id": "c1",
+      "kind": "chapter",
+      "n": 1,
+      "title": "What Is AI, Really?",
+      "md": "wiki/chapters/week-01-what-is-ai.md"
+    },
+    {
+      "id": "c2",
+      "kind": "chapter",
+      "n": 2,
+      "title": "Image Classification",
+      "md": "wiki/chapters/week-02-image-classification.md"
+    },
+    {
+      "id": "c3",
+      "kind": "chapter",
+      "n": 3,
+      "title": "Image Classification Project Lab: Train, Tune, Save and Share",
+      "md": "wiki/chapters/week-03-image-classification-project-lab.md"
+    },
+    {
+      "id": "aA",
+      "kind": "appendix",
+      "n": "A",
+      "title": "How Computers See Pictures",
+      "md": "wiki/appendices/appendix-a-how-computers-see-pictures.md"
+    },
+    {
+      "id": "aB",
+      "kind": "appendix",
+      "n": "B",
+      "title": "Sound, Waves and Spectrograms",
+      "md": "wiki/appendices/appendix-b-sound-waves-and-spectrograms.md"
+    },
+    {
+      "id": "aC",
+      "kind": "appendix",
+      "n": "C",
+      "title": "How a Model Learns",
+      "md": "wiki/appendices/appendix-c-how-a-model-learns.md"
+    },
+    {
+      "id": "aD",
+      "kind": "appendix",
+      "n": "D",
+      "title": "Pre-trained Models and Keypoints",
+      "md": "wiki/appendices/appendix-d-pre-trained-models-and-keypoints.md"
+    },
+    {
+      "id": "aE",
+      "kind": "appendix",
+      "n": "E",
+      "title": "Measuring Results",
+      "md": "wiki/appendices/appendix-e-measuring-results.md"
+    }
+  ],
+  "author_md": "wiki/back-matter/about-the-author.md"
 }
