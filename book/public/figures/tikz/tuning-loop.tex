@@ -1,0 +1,8 @@
+\begin{tikzpicture}[node distance=11mm]
+\node[box] (a) {\textbf{1. Try}\\[-1pt]{\scriptsize some settings}};
+\node[box,right=of a] (b) {\textbf{2. Test}\\[-1pt]{\scriptsize with new pictures}};
+\node[box,right=of b,fill=yellow!20] (c) {\textbf{3. OK?}};
+\node[box,right=of c,fill=green!20] (d) {\textbf{Done!}};
+\draw[arrow] (a)--(b); \draw[arrow] (b)--(c); \draw[arrow] (c)--node[above,font=\scriptsize]{yes}(d);
+\draw[arrow] (c.south)--++(0,-1.0)-|node[pos=0.25,below,font=\scriptsize]{no: change a setting or add data}(a.south);
+\end{tikzpicture}

@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[font=\bfseries,anchor=west] at (0,3.0) {50 pictures of one class (example)};
+\foreach \k in {0,...,39}{\draw[fill=blue!20,draw=blue!50!black] (\k*0.25,2.0) rectangle (\k*0.25+0.2,2.6);}
+\foreach \k in {40,...,49}{\draw[fill=orange!35,draw=orange!70!black] (\k*0.25+0.3,2.0) rectangle (\k*0.25+0.5,2.6);}
+\node[box,fill=blue!10,minimum width=5.6cm] (tr) at (2.5,0.2) {\textbf{Training set}: 40 pictures (80\%)};
+\node[box,fill=orange!15,minimum width=3.4cm] (te) at (9.0,0.2) {\textbf{Test set}: 10 pictures (20\%)};
+\draw[arrow] (2.5,1.9)--(tr.north);
+\draw[arrow] (9.0,1.9)--(te.north);
+\node[box,minimum width=5.6cm] (a) at (2.5,-1.6) {The model \textbf{learns} from these};
+\node[box,minimum width=3.4cm] (b) at (9.0,-1.6) {Kept aside; used \textbf{only} to test};
+\draw[arrow] (tr.south)--(a.north);
+\draw[arrow] (te.south)--(b.north);
+\end{tikzpicture}

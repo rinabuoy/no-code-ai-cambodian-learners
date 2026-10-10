@@ -1,0 +1,19 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw[rounded corners=3pt,fill=gray!8] (0,0) rectangle (12,6.2);
+\node[font=\scriptsize\bfseries,anchor=west] at (0.2,5.9) {Image Project (simplified sketch, not a screenshot)};
+\foreach \y/\n in {4.4/Class 1,2.9/Class 2,1.4/Class 3}{
+ \draw[rounded corners=2pt,fill=white] (0.3,\y) rectangle (5.2,\y+1.2);
+ \node[font=\small\bfseries,anchor=west] at (0.5,\y+0.9) {\n};
+ \node[draw,rounded corners=2pt,fill=blue!10,font=\scriptsize,minimum width=1.4cm] at (1.2,\y+0.4) {Webcam};
+ \node[draw,rounded corners=2pt,fill=blue!10,font=\scriptsize,minimum width=1.4cm] at (2.8,\y+0.4) {Upload};
+ \foreach \k in {0,1,2,3}{\draw[fill=gray!25] (3.7+\k*0.35,\y+0.2) rectangle (3.95+\k*0.35,\y+0.5);}
+}
+\node[draw,rounded corners=2pt,fill=blue!25,minimum width=2.6cm,minimum height=0.9cm] (tr) at (7.2,3.4) {\textbf{Train Model}};
+\node[font=\scriptsize,below=1mm of tr] {Advanced $\vee$};
+\draw[arrow] (5.2,3.5)--(tr);
+\draw[rounded corners=2pt,fill=white] (9,1.0) rectangle (11.7,5.2);
+\node[font=\small\bfseries] at (10.35,4.9) {Preview};
+\draw[fill=gray!20] (9.3,3.0) rectangle (11.4,4.5);
+\foreach \y/\w in {2.4/1.6,1.9/0.6,1.4/0.3}{\draw[fill=blue!35] (9.3,\y) rectangle (9.3+\w,\y+0.3);}
+\draw[arrow] (tr)--(9,3.4);
+\end{tikzpicture}

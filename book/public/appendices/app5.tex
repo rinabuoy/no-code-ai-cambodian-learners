@@ -1,0 +1,134 @@
+\chapter{Measuring Results}
+
+\begin{notebox}
+\textbf{For curious readers.} Chapters 3, 7, 8 and 9 use total accuracy, class accuracy, confidence and the confusion matrix. This appendix walks through them with one small worked example. The numbers are made up by the author to show the method.
+\end{notebox}
+
+\section{Accuracy}
+
+\textbf{Accuracy} is the share of test samples the model got right:
+
+
+accuracy = correct answers \ensuremath{\div} total test samples
+
+
+If a model gets 27 of 30 test clips right, its accuracy is 27 \ensuremath{\div} 30 = 0.9, or \textbf{90\%}.
+
+
+\section{Why one number can hide problems}
+
+Imagine 30 test clips: 10 “yes”, 10 “no”, 10 “stop”. The model’s results:
+
+
+\begin{center}
+
+\small
+
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+
+\toprule
+
+\textbf{Class} & \textbf{Tested} & \textbf{Correct} & \textbf{Class accuracy} \\
+
+\midrule
+
+yes & 10 & 10 & 100\% \\
+
+no & 10 & 10 & 100\% \\
+
+stop & 10 & 7 & 70\% \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{center}
+
+The \textbf{total accuracy} is 27 \ensuremath{\div} 30 = 90\%, which sounds great, but “stop” is weak. \textbf{Class accuracy} (accuracy for each class on its own) shows where to add samples. This is why the course asks you to read both.
+
+
+\section{The confusion matrix}
+
+A \textbf{confusion matrix} is a table of \emph{what the model said} against \emph{what the sample really was}. As in Chapter 7, \textbf{rows are the real class} and \textbf{columns are the model’s guess}.
+
+
+\begin{center}
+
+\small
+
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+
+\toprule
+
+\textbf{Real \textbackslash{} Guess} & \textbf{yes} & \textbf{no} & \textbf{stop} \\
+
+\midrule
+
+\textbf{yes} & 10 & 0 & 0 \\
+
+\textbf{no} & 0 & 10 & 0 \\
+
+\textbf{stop} & 1 & 2 & 7 \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{center}
+
+\begin{itemize}
+\item The \textbf{diagonal} (10, 10, 7) holds the correct answers. Big numbers there are good.
+\item Numbers \textbf{off the diagonal} are mistakes. Here “stop” was guessed as “yes” once and as “no” twice.
+\item Add each row to get the number tested; the diagonal divided by the row sum is the class accuracy.
+\end{itemize}
+
+Figure \ref{fig:confusion-matrix-example-2} shows the confusion matrix from the Chapter 8 example.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\linewidth]{figures/generated/confusion-matrix-example.png}
+\caption{The confusion matrix from the Chapter 8 example: rows are the real digit and columns what the model said.}\label{fig:confusion-matrix-example-2}
+\end{figure}
+
+\textbf{How to use it:} find the biggest off-diagonal number. That pair of classes is what to fix next, for example by adding more varied samples of both.
+
+
+\section{Confidence}
+
+For each prediction, Teachable Machine shows a \textbf{confidence}: a percentage for every class that adds up to 100\%. A strong model puts high confidence on the right class; a weak one spreads it out (Chapter 5). A high confidence is not a promise: a model can be confidently wrong, especially on things it never saw in training.
+
+
+Figure \ref{fig:confidence-strong-weak-2} compares a strong and a weak model (example values).
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\linewidth]{figures/generated/confidence-strong-weak.png}
+\caption{A strong model puts high confidence on the right class; a weak model is unsure (example values).}\label{fig:confidence-strong-weak-2}
+\end{figure}
+
+\section{Fair tests}
+
+Numbers are only trustworthy if the test is fair (Chapters 8 and 9):
+
+
+\begin{itemize}
+\item Test with \textbf{new} samples the model never trained on.
+\item Never augment test samples.
+\item Keep the test \textbf{balanced}: about the same number of samples in each class.
+\item Use the \textbf{same test} when comparing two models (Model A and Model B).
+\item Test with \textbf{different people, rooms and lighting}, not only yourself.
+\end{itemize}
+
+\section{Try it}
+
+\begin{enumerate}
+\item A model scores 8 of 10 on “cat”, 10 of 10 on “dog” and 3 of 10 on “bird”. Work out the total accuracy and the class accuracies. Which class needs help?
+\item Fill in a 3 \ensuremath{\times} 3 confusion matrix for your own classifier. What is its biggest mistake?
+\item Why is it unfair to test a model on the same samples it trained on?
+\end{enumerate}

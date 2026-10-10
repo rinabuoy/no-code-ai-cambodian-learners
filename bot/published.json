@@ -1,0 +1,29 @@
+{
+  "raw_base": "https://raw.githubusercontent.com/rinabuoy/no-code-ai-cambodian-learners/main/",
+  "repo_url": "https://github.com/rinabuoy/no-code-ai-cambodian-learners",
+  "book_title": "No-code AI for Young Cambodian Learners",
+  "author": "Rina Buoy, PhD",
+  "about": "A hands-on guide for secondary and high school learners (Grades 7-12) to build real AI without writing code, using Google Teachable Machine. It covers image, sound and pose classifiers and the ideas behind them: learning from examples, collecting varied data, training and tuning, testing with new data, and using AI responsibly.\n\nThis book was prepared with the assistance of Claude Code (an AI tool from Anthropic). The author provides the content and reviews and revises all of the outputs.\n\nPlan: a complete reviewed edition by the end of 2026, with a free soft copy (PDF) and a low-cost hard copy.",
+  "book": {
+    "title": "Book so far (cover, Chapters 1-3, appendices A-E, about the author)",
+    "file": "book/public/main.pdf"
+  },
+  "chapters": [
+    {"n": 1, "title": "What Is AI, Really?", "file": "book/public/chapter-1.pdf"},
+    {"n": 2, "title": "Image Classification", "file": "book/public/chapter-2.pdf"},
+    {"n": 3, "title": "Image Classification Project Lab: Train, Tune, Save and Share", "file": "book/public/chapter-3.pdf"}
+  ],
+  "coming_soon": [
+    {"n": 4, "title": "Audio and Sound Classification"},
+    {"n": 5, "title": "Audio Classification in Practice: Use Cases, Data and Evaluation"},
+    {"n": 6, "title": "Pose Prediction: Build a Sleepy-Head Detector"},
+    {"n": 7, "title": "Teaching AI to Read Digits in Khmer and English"},
+    {"n": 8, "title": "Image Data Augmentation: More Training Pictures from the Photos You Have"},
+    {"n": 9, "title": "Audio Data Augmentation: More Training Sounds from the Clips You Have"}
+  ],
+  "support": [
+    {"amount": 2, "file": "donate/aba-qr-2usd.png"},
+    {"amount": 5, "file": "donate/aba-qr-5usd.png"},
+    {"amount": 10, "file": "donate/aba-qr-10usd.png"}
+  ]
+}

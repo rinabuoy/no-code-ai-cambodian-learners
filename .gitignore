@@ -1,0 +1,5 @@
+.DS_Store
+raw/
+book/latex/
+book/public/*.log
+book/public/keys/

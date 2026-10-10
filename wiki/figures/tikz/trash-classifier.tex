@@ -1,0 +1,9 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[box,minimum width=2.6cm] (img) at (0,0) {\textbf{Input}\\[-1pt]{\scriptsize an image}};
+\node[box,minimum width=3.2cm,fill=blue!10] (mod) at (4.6,0) {\textbf{Trash classifier}\\[-1pt]{\scriptsize AI model}};
+\draw[arrow] (img)--(mod);
+\foreach \y/\t/\c/\n in {1.4/Can (metal)/gray!35/oa, 0/Plastic/blue!25/ob, -1.4/Paper/green!25/oc}{
+ \node[draw,rounded corners=2pt,fill=\c,minimum width=2.6cm,minimum height=0.9cm] (\n) at (9.4,\y) {\textbf{\t}};
+ \draw[arrow] (mod.east)--(\n.west);}
+\node[font=\scriptsize] at (9.4,2.3) {\textbf{Output: a label}};
+\end{tikzpicture}

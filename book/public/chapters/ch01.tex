@@ -1,0 +1,324 @@
+\chapter{What Is Artificial Intelligence (AI), Really?}
+
+\begin{glancebox}
+You will see how much of your day already runs on AI, learn what AI actually is, and meet the idea that powers every project in this book: a computer can \emph{learn from examples} instead of being told exact rules. You finish by opening Google Teachable Machine, the free, no-code tool you will use all the way through.
+\end{glancebox}
+
+\section*{Learning objectives}
+
+By the end of this chapter you can:
+
+
+\begin{enumerate}
+\item Give everyday examples of AI and explain what each one learns.
+\item Explain the difference between giving a computer rules and showing it examples.
+\item Describe supervised learning as \emph{data \ensuremath{\rightarrow} labels \ensuremath{\rightarrow} model \ensuremath{\rightarrow} prediction}.
+\item Name the three kinds of project in Teachable Machine (Image, Audio, Pose) and say what each one recognizes.
+\item Open a blank Image Project and find the Class boxes, the webcam button, the Train Model button and the Preview panel.
+\end{enumerate}
+
+\section*{Key terms}
+
+\textbf{Artificial intelligence (AI)} · \textbf{model} · \textbf{training} · \textbf{data} · \textbf{label} · \textbf{prediction} · \textbf{supervised learning} · \textbf{pattern} · \textbf{Teachable Machine} · \textbf{class}
+
+
+\section{AI is already around you}
+
+Think about your day so far. Did you use a face filter on Instagram or Facebook? Watch a “For You” feed on TikTok or YouTube? Ask a voice assistant such as Siri (iPhone) or Google Assistant (Android) a question, listen to music suggested by Spotify or YouTube Music, unlock your phone with Face ID, or let autocorrect fix a typing mistake?
+
+
+Every one of these runs on AI. Each also \emph{learned} something to do its job:
+
+
+\begin{center}
+
+
+
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+
+\toprule
+
+\textbf{What you used} & \textbf{What it learned} \\
+
+\midrule
+
+Face filters & what a face looks like \\
+
+Recommendations & what you like to watch \\
+
+Voice assistants & to understand speech \\
+
+Spam filters & what spam looks like \\
+
+Music discovery & your taste in music \\
+
+Autocorrect & how you usually type \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{center}
+
+\textbf{Activity (icebreaker).} Tick the ones you have used today. Which surprised you? The rest of this chapter explains how such systems learn.
+
+
+\section{What is AI?}
+
+\textbf{Artificial Intelligence (AI)} means making a computer program (or a \emph{model}) as smart as a human at some task. Take a simple question: \emph{is this person sad or happy by looking at a face image?} You can tell at a glance. Does a computer know? Not unless it has been taught.
+
+
+Figure \ref{fig:emotion-recognition} shows the question again: is this person sad or happy?
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\linewidth]{figures/provided/emotion-recognition.png}
+\caption{Emotion recognition: can you tell at a glance whether this person is sad or happy? A computer has to be taught.}\label{fig:emotion-recognition}
+\end{figure}
+
+\begin{notebox}
+\textbf{Note.} Recently, artificial intelligence has also been called \textbf{superintelligence}, especially when people talk about AI that could become smarter than humans rather than only as smart as a human at one task. This is the instructor’s note and is not on the Week 1 slides.
+\end{notebox}
+
+\section{Two ways to “program” a computer}
+
+\textbf{Way 1: step-by-step instructions.} A person writes exact rules and the computer follows them precisely. The same rules always give the same result. But the program breaks on cases nobody wrote a rule for. For example, a rule for smiling is if the mouth is 30\% wider than normal.
+
+
+Figure \ref{fig:smile-rule} shows the smile rule in action: the mouth is 30\% wider than normal, so the rule says “smile detected”.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\linewidth]{figures/provided/smile-rule.png}
+\caption{A rule for detecting a smile: if the mouth is 30\% wider than normal, the rule says }\label{fig:smile-rule}
+\end{figure}
+
+\textbf{Way 2: AI.} A person shows lots of \emph{examples}. The computer finds the pattern itself. It “learns” instead of being told, and it can handle new, never-seen examples. Such modelling approaches are data-driven. For example, we give the computer program (aka an AI model) 1000 images of sad faces and another 1000 images of smiling faces, and let the computer program figure what makes a smiling face different a sad one.
+
+
+In Figure \ref{fig:ai-learns-emotions} the model receives 1,000 sad faces and 1,000 smiling faces and works out the differences by itself.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/provided/ai-learns-emotions.png}
+\caption{How AI learns to recognise emotions: 1,000 sad faces and 1,000 smiling faces go into the model, which figures out the differences by itself.}\label{fig:ai-learns-emotions}
+\end{figure}
+
+\begin{notebox}
+\textbf{Think about it.} Can a computer learn something without anyone telling it exactly what to do? Discuss with a partner for 60 seconds before reading on.
+\end{notebox}
+
+Why not just write rules? Imagine writing rules for “smiling”. How wide must the mouth curve? What about different faces, lighting, and camera angles? There are far too many cases. Showing examples is much easier, and it is how Teachable Machine works.
+
+
+\section{Supervised learning: sorting candy}
+
+Imagine you hand a friend 100 candies already sorted into a “red” pile and a “blue” pile. After a while, they start sorting \emph{new} candies correctly on their own. That is \textbf{supervised learning}. It has four steps:
+
+
+\begin{enumerate}
+\item \textbf{Data.} Show lots of labeled examples.
+\item \textbf{Labels.} Each example comes with the correct answer.
+\item \textbf{Model.} The AI studies the patterns.
+\item \textbf{Prediction.} It guesses labels for new data it has never seen.
+\end{enumerate}
+
+\begin{notebox}
+\textbf{What does “supervised” mean?} To \emph{supervise} is to watch over and guide, like a teacher checking homework. In supervised learning, a person (the supervisor) gives the computer the \textbf{correct answer, called a label,} for every training example. The model learns by comparing its guesses with those answers. If the examples came with no answers, the learning would be \emph{unsupervised}. This definition is the author’s explanation, not from the slides.
+\end{notebox}
+
+Figure \ref{fig:supervised-flow} summarizes the four steps.
+
+
+\begin{figure}[htbp]
+\centering
+\adjustbox{max width=\linewidth}{\input{figures/tikz/supervised-flow}}
+\caption{Supervised learning in four steps: data, labels, model, prediction.}\label{fig:supervised-flow}
+\end{figure}
+
+\textbf{Worked example 1: cat or dog.} Show the model 100 photos labeled “cat” and 100 labeled “dog”. It studies the differences, such as shapes, ears and patterns. Then you show it a brand-new photo. It answers with a \emph{confidence}: “That’s 92\% likely a dog!”
+
+
+\textbf{Worked example 2: a smile detector.}
+
+
+\begin{itemize}
+\item \emph{Training}: give the computer faces that are smiling and faces that are not smiling, and let it search for what makes them different.
+\item \emph{Result}: a \textbf{trained AI model}.
+\item \emph{Prediction}: show it a new face and ask, “Smiling?”
+\end{itemize}
+
+The whole flow is: \textbf{data \ensuremath{\rightarrow} training (searching for patterns) \ensuremath{\rightarrow} trained model \ensuremath{\rightarrow} prediction.}
+
+
+Figure \ref{fig:smile-detector} applies the four steps to the smile detector.
+
+
+\begin{figure}[htbp]
+\centering
+\adjustbox{max width=\linewidth}{\input{figures/tikz/smile-detector}}
+\caption{The smile detector: examples of smiling and not-smiling faces train a model, which then answers }\label{fig:smile-detector}
+\end{figure}
+
+\section{More than pictures: other kinds of data}
+
+The same idea works for any data (technically called “modality”) a computer can read:
+
+
+\begin{itemize}
+\item \textbf{Image}: an emotion detector that looks at faces.
+\item \textbf{Audio}: an emotion detector that listens to voices (happy, angry, surprised).
+\item \textbf{Pose}: a bad-vs-good posture detector that tracks the skeleton of a sitting person.
+\item \textbf{Text}: a polite-vs-impolite detector, or sentiment analysis that labels a review positive, neutral or negative.
+\end{itemize}
+
+The limit is your imagination.
+
+
+Figure \ref{fig:multiple-data-types} shows that audio, image and pose all follow the same path from examples to a trained model.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/provided/multiple-data-types.png}
+\caption{Training AI models with multiple data types: audio (clap / no clap), image (dog / not a dog) and pose (hand raising / not raising) all follow the same path: examples, training, a trained model, then a prediction for new data.}\label{fig:multiple-data-types}
+\end{figure}
+
+\section{Meet Teachable Machine}
+
+\textbf{Google Teachable Machine} (teachablemachine.withgoogle.com) is a free tool that lets \emph{you} train a real AI model in minutes, right in your browser. Extra course materials and helper tools for Teachable Machine are collected on the course website.\footnote{Course web app: \url{https://seqmodelling.rinabuoy.com/teachable-machine/}}
+
+
+\begin{itemize}
+\item \textbf{No coding required}: point, click and train.
+\item \textbf{Fast results}: a working model in minutes.
+\item \textbf{Uses your webcam and microphone}: you collect your own real data live.
+\end{itemize}
+
+It offers three ways to train an AI:
+
+
+\begin{center}
+
+
+
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+
+\toprule
+
+\textbf{Project type} & \textbf{Recognizes} & \textbf{Example} \\
+
+\midrule
+
+\textbf{Image} & pictures from your webcam & rock-paper-scissors detector \\
+
+\textbf{Audio} & sounds and short clips & clap or whistle detector \\
+
+\textbf{Pose} & body position and movement & exercise rep counter \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{center}
+
+Figure \ref{fig:project-types} shows the three project types side by side.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1.0\linewidth]{figures/provided/project-types.png}
+\caption{The three kinds of project in Teachable Machine: Image, Audio and Pose.}\label{fig:project-types}
+\end{figure}
+
+\textbf{Discuss.} If you built an AI for your favourite hobby, would it need to \emph{see}, \emph{hear}, or track \emph{movement}? Pick your hobby and your AI type.
+
+
+\section{Hands-on: your first look at Teachable Machine}
+
+\textbf{Activity 1: create your workspace.}
+
+
+\begin{enumerate}
+\item Go to teachablemachine.withgoogle.com.
+\item Click \textbf{Get Started}. No account or sign-up is required to try it.
+\item When the browser asks, allow camera and microphone access.
+\end{enumerate}
+
+\textbf{Activity 2: explore real example projects.} Open two or three public example projects and try them live. Write down: What classes (categories) did the project use? How accurate did it seem when you tested it live? What surprised you, or fooled the model? \emph{Tip:} try to trick the model on purpose. That is how you learn its limits.
+
+
+\textbf{Activity 3: open your first Image Project.} Open a blank Image Project. Do \textbf{not} train anything yet. Just find:
+
+
+\begin{itemize}
+\item the \textbf{Class boxes} where you will add examples,
+\item the \textbf{webcam capture button},
+\item the \textbf{Train Model} button,
+\item the live \textbf{Preview} panel on the right.
+\end{itemize}
+
+Figure \ref{fig:tm-workspace} is a simplified sketch of the workspace you should find.
+
+
+\begin{figure}[htbp]
+\centering
+\adjustbox{max width=\linewidth}{\input{figures/tikz/tm-workspace}}
+\caption{A simplified sketch of an Image Project workspace: class boxes with Webcam and Upload buttons, the Train Model button, and the live Preview panel.}\label{fig:tm-workspace}
+\end{figure}
+
+\textbf{Activity 4: test previous models.} Try out two image models that were trained earlier. Open each link, allow the camera if asked, and test the model live:
+
+
+\begin{itemize}
+\item \textbf{Mask detector} (classes: \emph{Mask}, \emph{No Mask}, \emph{Incorrect}): \href{https://teachablemachine.withgoogle.com/models/ZAcyiHFuR/}{https://teachablemachine.withgoogle.com/models/ZAcyiHFuR/}
+\item \textbf{Rock-paper-scissors} (classes: \emph{paper}, \emph{scissor}, \emph{rock}): \href{https://teachablemachine.withgoogle.com/models/sNgYIRRGr/}{https://teachablemachine.withgoogle.com/models/sNgYIRRGr/}
+\end{itemize}
+
+For each model:
+
+
+\begin{enumerate}
+\item Test every class and write down how confident the model is.
+\item Try to fool it. For the mask model, what happens with a hand over the mouth or a mask worn under the nose? For the rock-paper-scissors model, what happens with a different hand position, distance or lighting, or with no hand at all?
+\item Which class is the hardest for it? What kinds of examples might have been missing from its training data?
+\end{enumerate}
+
+\textbf{Exit ticket.} Sketch an idea for a 2–3 class image classifier that you will build next week. Ideas: hand gestures, fruit vs. vegetable, facial expressions, school objects.
+
+
+\section*{Summary}
+
+\begin{itemize}
+\item AI is all around you, and each system learned its skill from examples.
+\item Rules break on cases nobody foresaw; learning from examples handles new cases.
+\item Supervised learning = data \ensuremath{\rightarrow} labels \ensuremath{\rightarrow} model \ensuremath{\rightarrow} prediction; the model answers with a confidence.
+\item The same idea works for images, sounds, poses and text.
+\item Teachable Machine lets you train Image, Audio and Pose models without writing code.
+\end{itemize}
+
+\section*{Check your understanding}
+
+\begin{enumerate}
+\item Name three apps you used this week and what each one learned.
+\item In your own words, what is the difference between a rule and an example?
+\item In the smile detector, what are the \emph{data}, the \emph{labels} and the \emph{prediction}?
+\item Which Teachable Machine project type would you use for a clap detector? For a posture checker?
+\end{enumerate}
+
+\emph{Answer hints:} (3) data = face photos; labels = smiling / not smiling; prediction = the model’s guess for a new face. (4) Audio; Pose.
+
+
+\section*{Further practice}
+
+Bring your classifier sketch to the next chapter. Write down the 2–3 classes you will use and where you could collect the pictures.
+
+
+\medskip\noindent\hrulefill\medskip

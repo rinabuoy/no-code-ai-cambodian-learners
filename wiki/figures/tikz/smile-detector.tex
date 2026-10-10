@@ -1,0 +1,16 @@
+\providecommand{\face}[3]{% #1,#2 = centre, #3 = 1 smiling / 0 not smiling
+\begin{scope}[shift={(#1,#2)}]
+\draw[fill=yellow!40,draw=black!70] (0,0) circle (0.45);
+\fill (-0.15,0.12) circle (0.045); \fill (0.15,0.12) circle (0.045);
+\ifnum#3=1 \draw[thick] (-0.2,-0.1) arc (200:340:0.22);\else \draw[thick] (-0.18,-0.2)--(0.18,-0.2);\fi
+\end{scope}}
+\begin{tikzpicture}
+\foreach \x in {0,1.1,2.2}{\face{\x}{0.6}{1}\face{\x}{-1.0}{0}}
+\node[font=\scriptsize] at (1.1,1.25) {smiling};
+\node[font=\scriptsize] at (1.1,-1.7) {not smiling};
+\node[box,minimum width=2.4cm] (m) at (5.0,-0.2) {\textbf{Training}\\[-1pt]{\scriptsize search for patterns}};
+\node[box,fill=blue!10,minimum width=2.4cm] (t) at (8.2,-0.2) {\textbf{Trained}\\[-1pt]{\scriptsize AI model}};
+\face{11.4}{-0.2}{1}
+\node[font=\scriptsize,align=center] at (11.4,-1.0) {new face:\\ ``Smiling?''};
+\draw[arrow] (3.0,-0.2)--(m.west); \draw[arrow] (m)--(t); \draw[arrow] (t.east)--(10.8,-0.2);
+\end{tikzpicture}

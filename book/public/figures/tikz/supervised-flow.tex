@@ -1,0 +1,10 @@
+\begin{tikzpicture}[node distance=14mm]
+\node[box] (d) {\textbf{1. Data}\\[-1pt]{\scriptsize labeled examples}};
+\node[box,right=of d] (l) {\textbf{2. Labels}\\[-1pt]{\scriptsize the correct answers}};
+\node[box,right=of l] (m) {\textbf{3. Model}\\[-1pt]{\scriptsize studies the patterns}};
+\node[box,right=of m,fill=green!15] (p) {\textbf{4. Prediction}\\[-1pt]{\scriptsize guesses new data}};
+\draw[arrow] (d)--(l); \draw[arrow] (l)--(m); \draw[arrow] (m)--(p);
+\node[below=3mm of d,text width=2.6cm,align=center] {\scriptsize 100 photos of cats and dogs};
+\node[below=3mm of l,text width=2.6cm,align=center] {\scriptsize ``cat'' or ``dog'' on each photo};
+\node[below=3mm of p,text width=2.8cm,align=center] {\scriptsize ``92\% likely a dog!''};
+\end{tikzpicture}

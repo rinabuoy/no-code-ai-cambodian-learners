@@ -1,0 +1,7 @@
+\begin{tikzpicture}[node distance=12mm]
+\node[box] (a) {\textbf{Webcam frame}\\[-1pt]{\scriptsize your digit card}};
+\node[box,right=of a,fill=gray!15] (b) {\textbf{MobileNet}\\[-1pt]{\scriptsize pre-trained: edges, curves, loops}};
+\node[box,right=of b,fill=blue!12] (c) {\textbf{Your classifier}\\[-1pt]{\scriptsize which shapes mean which digit}};
+\node[box,right=of c,fill=green!15] (d) {\textbf{Prediction}\\[-1pt]{\scriptsize e.g.\ km\_3 91\%}};
+\draw[arrow] (a)--(b); \draw[arrow] (b)--(c); \draw[arrow] (c)--(d);
+\end{tikzpicture}

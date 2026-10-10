@@ -1,0 +1,75 @@
+\chapter{Sound, Waves and Spectrograms}
+
+\begin{notebox}
+\textbf{For curious readers.} Chapters 4, 5 and 9 use the word \emph{spectrogram}. This appendix explains where it comes from. You can finish the course without it.
+\end{notebox}
+
+\section{What is sound?}
+
+Sound is a \textbf{vibration of the air}. When you speak, your vocal cords open and close hundreds of times a second (Chapter 4), pushing the air back and forth. The moving air reaches a microphone, which turns the movement into an electric signal.
+
+
+\section{Reading a waveform}
+
+The picture a recorder draws is called a \textbf{waveform}: time goes left to right and the height shows how strong the vibration is at that moment.
+
+
+\begin{itemize}
+\item \textbf{Loudness} (volume) is the \emph{height} of the wave: a loud sound makes tall peaks.
+\item \textbf{Pitch} (how high or low a sound is) depends on how \emph{fast} the wave repeats: a high note vibrates fast and a low note vibrates slowly. The number of repeats per second is the \textbf{frequency}, measured in hertz (Hz).
+\end{itemize}
+
+Figure \ref{fig:audio-yes-vs-no-2} shows how the waveforms of “Yes” and “No” differ.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\linewidth]{figures/slides/audio-yes-vs-no.png}
+\caption{The waveforms of “Yes” and “No” look different, which is what the model learns. \emph{Image from the course slides by Rina Buoy, PhD.}}\label{fig:audio-yes-vs-no-2}
+\end{figure}
+
+\section{From sound to numbers}
+
+A computer measures the signal many times every second and stores each measurement as a number. Each measurement is a \textbf{sample}, and the number of samples per second is the \textbf{sample rate}. \emph{(General background, not from the lessons: music CDs use 44,100 samples per second.)} A higher sample rate gives a more detailed recording and a bigger file. This is why file formats and clip length matter (Chapter 4).
+
+
+\section{Why a waveform is not enough}
+
+A waveform shows \emph{how loud} the sound is over time, but a word is made of many pitches mixed together. Two different words can have similar loudness patterns. To tell them apart, it helps to see \textbf{which pitches are present at each moment}.
+
+
+\section{The spectrogram}
+
+A \textbf{spectrogram} is a picture of sound (as defined in Chapter 9):
+
+
+\begin{itemize}
+\item \textbf{left to right} is time,
+\item \textbf{bottom to top} goes from low pitch to high pitch,
+\item \textbf{brightness} shows how loud that pitch is at that moment.
+\end{itemize}
+
+\emph{Author’s explanation of how it is made:} the computer takes a very short slice of the sound, works out how much of each pitch is in it, and draws that as one thin vertical stripe. Putting the stripes side by side gives the picture.
+
+
+Figure \ref{fig:spectrogram-original-2} shows the spectrogram of the word “stop”.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.4\linewidth]{figures/slides/spectrogram-original.png}
+\caption{Spectrogram of the word “stop”. \emph{Image from the course slides by Rina Buoy, PhD.}}\label{fig:spectrogram-original-2}
+\end{figure}
+
+\section{Why spectrograms help AI}
+
+Once sound is a picture, a model that is good with pictures can learn from it. This is why audio classification in Teachable Machine is treated much like image classification: the word “yes” makes one kind of pattern and “no” makes another. It is also why \textbf{masking} (Chapter 9) works: blanking a vertical band hides one moment and blanking a horizontal band hides a range of pitches, so the model cannot depend on one small detail.
+
+
+\section{Try it}
+
+\begin{enumerate}
+\item Use the course’s Sound Wave Recorder (Chapter 5) to record “yes” in a low voice and then in a high voice. How does the waveform change?
+\item Whistle a rising note. In which direction does the bright line move on a spectrogram?
+\item Clap once. Is the picture a short stripe or a long band? Why?
+\end{enumerate}

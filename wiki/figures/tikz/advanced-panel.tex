@@ -1,0 +1,9 @@
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw[rounded corners=3pt,fill=white] (0,0) rectangle (8.6,4.4);
+\node[font=\bfseries,anchor=west] at (0.3,4.0) {Advanced (sketch)};
+\foreach \y/\n/\v/\q in {3.1/Epochs/50/{How long to train?}, 2.1/Batch size/16/{How large a step?}, 1.1/Learning rate/0.001/{How fast to learn?}}{
+ \node[anchor=west] at (0.3,\y) {\textbf{\n}};
+ \node[draw,fill=gray!10,minimum width=1.6cm] at (4.0,\y) {\v};
+ \node[anchor=west,font=\scriptsize\itshape] at (5.2,\y) {\q};}
+\node[font=\scriptsize,anchor=west] at (0.3,0.35) {Reset Defaults \quad\quad Under the hood};
+\end{tikzpicture}
